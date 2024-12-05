@@ -124,7 +124,7 @@ function setup_fvp() {
     if [[ "${OS}" != "Linux" ]]; then
         echo "[${FUNCNAME[0]}] Warning: FVP only supported with Linux OS, skipping FVP setup..."
         echo "[${FUNCNAME[0]}] Warning: For MacOS, using https://github.com/Arm-Examples/FVPs-on-Mac is recommended."
-        echo "[${FUNCNAME[0]}] Warning:   Follow the instructions and make sure the path is set correctly." 
+        echo "[${FUNCNAME[0]}] Warning:   Follow the instructions and make sure the path is set correctly."
         return 1
     fi
 
@@ -322,6 +322,8 @@ setup_vela
 
 # Setup FVP
 setup_fvp
+
+pip install mlia
 
 echo "[main] update path by doing 'source ${setup_path_script}'"
 
